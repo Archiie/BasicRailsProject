@@ -1,0 +1,9 @@
+<h1>Index Page</h1>
+
+<% @posts.each do |p| %>
+	<div class="well">
+		<h3><%= p.title %></h3>
+		<p><%= p.body %></p>
+		<%= link_to "View Source", post_path(p), :class => 'btn btn-default' %>
+	</div>
+<% end %>

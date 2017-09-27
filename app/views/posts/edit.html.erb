@@ -1,0 +1,22 @@
+<h1>Edit your post</h1>
+
+<%= form_for :post, url: post_path(@post), method: :patch do |f| %>
+	<% if @post.errors.any? %>
+		<% @post.errors.full_messages.each do |m| %>
+			<div class="alert alert-danger"><%= m %></div>
+		<% end %>
+	<% end %>
+	<p>
+		<%= f.label :title %>
+		<%= f.text_field(:title, {:class => 'form-control'}) %> <!--form-control is a bootstrap class-->
+	</p>
+
+	<p>
+		<%= f.label :body %>
+		<%= f.text_area(:body, {:class => 'form-control'}) %>
+	</p>
+
+	<p>
+		<%= f.submit({:class => 'btn btn-primary'}) %>
+	</p>
+<% end %>
